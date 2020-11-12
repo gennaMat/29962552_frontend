@@ -1,0 +1,63 @@
+<p>signup works!</p>
+<div class="container">
+    <div id="home" class="flex-center flex-row">
+        <mat-card class="card">
+            <mat-card-header>
+              <mat-card-title class="bold icon"><fa-icon [icon]="signUpIco"></fa-icon>{{signUpTitle}}</mat-card-title>
+              <mat-card-subtitle class="medium"></mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content class="regular">
+                <mat-divider></mat-divider>
+
+                <form class="form">
+                <mat-form-field class="form-full-width">
+                    <mat-label>Email Address</mat-label>
+                    <input id="username" matInput [formControl]="fUsernameControl" placeholder="examle@gmail.com">
+                    <mat-error *ngIf="fUsernameControl.hasError('email') && !fUsernameControl.hasError('required')">
+                        Please enter a valid username/email
+                      </mat-error>
+                      <mat-error *ngIf="fUsernameControl.hasError('required')">
+                        username is <strong>required</strong>
+                      </mat-error>
+                </mat-form-field>
+                </form>
+
+                <mat-divider></mat-divider>
+
+                <form class="form">
+                    <mat-form-field class="form-full-width">
+                        <mat-label>Password</mat-label>
+                        <input id="password" matInput [formControl]="fPasswordControl"  [type]="'password'">
+                        <mat-error *ngIf="fPasswordControl.hasError('minLength') && !fPasswordControl.hasError('required')">
+                            Password minimum lenght of 8 characters.
+                        </mat-error>
+                        <mat-error *ngIf="fPasswordControl.hasError('required')">
+                            password is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
+                </form>
+
+                <mat-divider></mat-divider>
+
+                <form class="form">
+                    <mat-form-field class="form-full-width">
+                        <mat-label>Confirm Password</mat-label>
+                        <input id="confirm-password" matInput [formControl]="fConfirmPWdControl" [type]="'password'">
+                        <mat-error *ngIf="fConfirmPWdControl.hasError('minLength') && !fConfirmPWdControl.hasError('required')">
+                            Password minimum lenght of 8 characters.
+                        </mat-error>
+                        <mat-error *ngIf="fConfirmPWdControl.hasError('required')">
+                            password is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
+                </form>
+
+                <mat-divider></mat-divider>
+
+                <div id="buttons" class="flex-center flex-column">
+                    <button id="submit"mat-raised-button class="btn" (click)="signUp()" >{{btnCreate}}</button>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>

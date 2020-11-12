@@ -1,0 +1,109 @@
+<div class="spinner">
+  <mat-spinner *ngIf="showSpinner"></mat-spinner>
+</div>
+<div class="container">
+    <div id="home"  class="flex-center flex-column">
+       <div class="upload">
+          <mat-card class="card">
+            <mat-card-header>
+              <mat-card-title class="bold icon"><fa-icon [icon]="uploadIco"></fa-icon>{{uploadTitle}}</mat-card-title>
+              <mat-card-subtitle class="medium">{{uploadSub}}</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content class="regular">
+              <input #csvInput hidden="true" type="file" onclick="this.value=null" (change)="inputChange($event)" accept=".csv .pdf"/>
+              <button mat-raised-button class="btn" (click)="csvInput.click()">{{btnUploadTitle}}</button>
+            </mat-card-content>
+        </mat-card>
+       </div>
+
+       <div class="inputs" id="inputs-div">
+        <mat-card class="card">
+          <mat-card-header>
+            <mat-card-title class="bold icon"><fa-icon [icon]="infoIco"></fa-icon>{{infoTitle}}</mat-card-title>
+            <mat-card-subtitle class ="medium">{{infoSubtitle}}</mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content class="regular">
+            <mat-divider></mat-divider>
+
+            <form class="form" id = "idNum">
+              <mat-form-field class="form-full-width">
+                <mat-label>Identification Number(RSA)</mat-label>
+                <input id="id" matInput [formControl]="fIDNumberControl" placeholder="1234567890123">
+                <mat-error *ngIf="fIDNumberControl.hasError('idValidation') && !fIDNumberControl.hasError('required')" >
+                  Please enter a valid id number
+                </mat-error>
+                <mat-error *ngIf="fIDNumberControl.hasError('required')">
+                  ID is <strong>required</strong>
+                </mat-error>
+              </mat-form-field>
+            </form>
+
+            <mat-divider></mat-divider>
+
+            <form class="form">
+              <mat-form-field class="form-full-width">
+                <mat-label>First Name</mat-label>
+                <input id="first-name" matInput [formControl]="fNameControl" placeholder="John">
+                <mat-error *ngIf="fNameControl.hasError('minLength') && !fNameControl.hasError('required')">
+                  Please enter a valid first name
+                </mat-error>
+                <mat-error *ngIf="fNameControl.hasError('required')">
+                  First name is <strong>required</strong>
+                </mat-error>
+              </mat-form-field>
+            </form>
+            
+            <mat-divider></mat-divider>
+
+            <form class="form">
+              <mat-form-field class="form-full-width">
+                <mat-label>Last Name</mat-label>
+                <input id="last-name" matInput [formControl]="fLastControl" placeholder="Doe">
+                <mat-error *ngIf="fLastControl.hasError('minLength') && !fLastControl.hasError('required')">
+                  Please enter a valid last name
+                </mat-error>
+                <mat-error *ngIf="fLastControl.hasError('required')">
+                  Last name is <strong>required</strong>
+                </mat-error>
+              </mat-form-field>
+            </form>
+
+            <mat-divider></mat-divider>
+
+            <form class="form">
+              <mat-form-field class="form-full-width">
+                <mat-label>Contact Number</mat-label>
+                <input id="contact" matInput [formControl]="fContact" placeholder="0825430123">
+                <mat-error *ngIf="fContact.hasError('minLength') && !fContact.hasError('required')">
+                  Please enter a valid contact number
+                </mat-error>
+                <mat-error *ngIf="fContact.hasError('required')">
+                  contact number is <strong>required</strong>
+                </mat-error>
+              </mat-form-field>
+            </form>
+
+            <mat-divider></mat-divider>
+
+            <form class="form">
+              <mat-form-field class="form-full-width">
+                <mat-label>Nationality</mat-label>
+                <input id="nat" matInput [formControl]="fNationality" placeholder="ZA">
+                <mat-error *ngIf="fNationality.hasError('minLength') && !fNationality.hasError('required')">
+                  Please enter a valid nationality
+                </mat-error>
+                <mat-error *ngIf="fNationality.hasError('required')">
+                  Nationality is <strong>required</strong>
+                </mat-error>
+              </mat-form-field>
+            </form>
+
+            <mat-divider></mat-divider>
+
+            <button id="submit"mat-raised-button class="btn" (click)="submitInfo()">{{btnSubmitTitle}}</button>
+         
+          </mat-card-content>
+        </mat-card>
+       </div>
+    </div>
+  </div>

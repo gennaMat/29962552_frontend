@@ -1,0 +1,47 @@
+<p>login works!</p>
+<div class="spinner">
+    <mat-spinner *ngIf="showSpinner"></mat-spinner>
+</div>
+<div class="container">
+    <div id="home" class="flex-center flex-column">
+        <mat-card class="card">
+            <mat-card-header>
+              <mat-card-title class="bold icon"><fa-icon [icon]="loginIco"></fa-icon>{{loginTitle}}</mat-card-title>
+              <mat-card-subtitle class="medium"></mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content class="regular">
+                <mat-divider></mat-divider>
+
+                <form class="form">
+                <mat-form-field class="form-full-width">
+                    <mat-label>Email Address</mat-label>
+                    <input id="username" matInput [formControl]="fUsernameControl" placeholder="examle@gmail.com">
+                    <mat-error *ngIf="fUsernameControl.hasError('email') && !fUsernameControl.hasError('required')">
+                        Please enter a valid username/email
+                      </mat-error>
+                      <mat-error *ngIf="fUsernameControl.hasError('required')">
+                        username is <strong>required</strong>
+                      </mat-error>
+                </mat-form-field>
+                </form>
+
+                <mat-divider></mat-divider>
+
+                <form class="form">
+                    <mat-form-field class="form-full-width">
+                        <mat-label>Password</mat-label>
+                        <input id="password" matInput [formControl]="fPasswordControl" [type]="'password'">
+                        <mat-error *ngIf="!fUsernameControl.hasError('required')">
+                            Please enter a valid password
+                        </mat-error>
+                    </mat-form-field>
+                    </form>
+
+                <div id="buttons" class="flex-center flex-row">
+                    <button id="login-btn"mat-raised-button class="btn" (click)="login()" (click)="loadLogin()">{{btnLogin}}</button>
+                    <button id="signup-btn"mat-raised-button class="btn" routerLink="/signup">{{btnSignUp}}</button>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>

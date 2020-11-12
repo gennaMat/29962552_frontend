@@ -1,0 +1,128 @@
+:root{ 
+    font-size: 62.5;
+    position: fixed;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: auto;
+    overflow-y: auto;
+    
+}
+
+#inputs-div{
+    visibility: hidden;
+}
+
+html, body{
+    overflow: auto;
+    background-color: #333;
+}
+
+.bold,.medium,.regular{
+    margin-bottom: 1rem;
+}
+
+.btn:hover{
+    cursor: pointer;
+    box-shadow: 0 0.4rem 1.4rem rgba(86, 158, 235, 0.5);
+    transform: translateY(-0.1rem);
+    transition: 150ms;
+}
+
+.btn{
+    justify-content: center;
+    margin: 0.8rem;
+}
+
+.bold{
+    font-weight: 700;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    color: #333;
+}
+
+.medium{
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+
+.regular{
+    font-weight: 400;
+    font-size: 0.9rem;
+}
+
+.container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;/*Allign things vertically*/
+    align-items: flex-start;/*Align things horisontally*/
+    max-width: 90rem;
+    margin:0 auto;
+}
+
+.flex-row{
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.card{
+    margin: 1.2rem;
+}
+
+
+.flex-center{
+    justify-content: center;
+    align-items: center;
+}
+
+.btn:hover{
+    cursor: pointer;
+    box-shadow: 0 0.4rem 1.4rem rgba(86, 158, 235, 0.5);
+    transform: translateY(-0.1rem);
+    transition: 150ms;
+}
+
+.icon fa-icon{
+    width: 5.6rem;
+    height: 5.6rem;
+    color: #0bb5f4 ;
+    margin-right: 0.8rem;
+    font-size: 2rem;
+    position: relative;
+}
+
+.form {
+    min-width: 9.3rem;
+    max-width: 13rem;
+    width: 100%;
+    margin: 1rem;
+    padding: 1rem;
+    justify-content: center;
+  }
+  
+.form-full-width {
+    width: 100%;
+  }
+
+.spinner{
+    position: fixed;
+    left: 50%;
+    top: 35%;
+    z-index: 1000;
+    height: 2em;
+    width: 2rem;
+}
+
+@media only screen and (max-width: 30.0625rem){
+    .flex-row{
+        display: flex;
+        flex-direction: column;
+    }
+}
