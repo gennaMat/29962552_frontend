@@ -1,6 +1,10 @@
 <div class="spinner">
-    <mat-spinner *ngIf="showSpinner"></mat-spinner>
+    <mat-progress-spinner mode="indeterminate" color="warn" *ngIf="showSpinner">
+    </mat-progress-spinner>
+
 </div>
+
+
 <div class="container">
     <div id="home" class="flex-center flex-column">
         <mat-card class="card">
@@ -9,12 +13,12 @@
               <mat-card-subtitle class="medium"></mat-card-subtitle>
             </mat-card-header>
             <mat-card-content class="regular">
-                <mat-divider></mat-divider>
+                
 
                 <form class="form">
                 <mat-form-field class="form-full-width">
                     <mat-label>Email Address</mat-label>
-                    <input id="username" matInput [formControl]="fUsernameControl" placeholder="examle@gmail.com">
+                    <input id="username" matInput [formControl]="fUsernameControl" placeholder="example@gmail.com">
                     <mat-error *ngIf="fUsernameControl.hasError('email') && !fUsernameControl.hasError('required')">
                         Please enter a valid username/email
                       </mat-error>
@@ -24,12 +28,12 @@
                 </mat-form-field>
                 </form>
 
-                <mat-divider></mat-divider>
+                
 
                 <form class="form">
                     <mat-form-field class="form-full-width">
                         <mat-label>Password</mat-label>
-                        <input id="password" matInput [formControl]="fPasswordControl" [type]="'password'">
+                        <input id="password" matInput [formControl]="fPasswordControl" [type]="'Password'">
                         <mat-error *ngIf="!fUsernameControl.hasError('required')">
                             Please enter a valid password
                         </mat-error>
@@ -44,3 +48,4 @@
         </mat-card>
     </div>
 </div>
+

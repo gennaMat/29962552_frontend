@@ -208,17 +208,17 @@ export class HomeComponent implements OnInit {
         }
         else
         {
-          this.openSnackBar("Please provide your last name","Close");
+          this.openSnackBar("Please provide your surname","Close");
         }
       }
       else
       {
-        this.openSnackBar("Please provide your first name","Close");
+        this.openSnackBar("Please provide your name","Close");
       }
     }
     else
     {
-      this.openSnackBar("Please provide your identification number (RSA)","Close");
+      this.openSnackBar("Please provide your ID number","Close");
     }
   }
   

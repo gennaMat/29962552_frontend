@@ -1,5 +1,5 @@
 :root{ 
-    font-size: 62.5;
+    font-size: 65;
     position: fixed;
     top:0;
     bottom: 0;
@@ -16,7 +16,7 @@
 
 html, body{
     overflow: auto;
-    background-color: #333;
+    background-color: rgba(185, 184, 184, 0.5);
 }
 
 .bold,.medium,.regular{
@@ -25,7 +25,7 @@ html, body{
 
 .btn:hover{
     cursor: pointer;
-    box-shadow: 0 0.4rem 1.4rem rgba(86, 158, 235, 0.5);
+    box-shadow: 0 0.4rem 1.4rem rgba(107, 63, 63, 0.5);
     transform: translateY(-0.1rem);
     transition: 150ms;
 }
@@ -33,13 +33,15 @@ html, body{
 .btn{
     justify-content: center;
     margin: 0.8rem;
+    text-decoration-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(185, 184, 184, 0.5);
 }
 
 .bold{
     font-weight: 700;
     font-size: 1.5rem;
     text-transform: uppercase;
-    color: #333;
+    color: rgb(39, 38, 38);
 }
 
 .medium{
@@ -60,6 +62,7 @@ html, body{
     align-items: flex-start;/*Align things horisontally*/
     max-width: 90rem;
     margin:0 auto;
+    
 }
 
 .flex-row{
@@ -87,7 +90,7 @@ html, body{
 .icon fa-icon{
     width: 5.6rem;
     height: 5.6rem;
-    color: #f40b0b ;
+    color: #e04646 ;
     margin-right: 0.8rem;
     font-size: 2rem;
     position: relative;
@@ -113,6 +116,7 @@ html, body{
     z-index: 1000;
     height: 2em;
     width: 2rem;
+
 }
 
 @media only screen and (max-width: 30.0625rem){
@@ -121,3 +125,39 @@ html, body{
         flex-direction: column;
     }
 }
+
+.loader-wrapper {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #38404d;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loader {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    border: 4px solid #Fff;
+    animation: loader 3s infinite ease;
+}
+
+@keyframes loader {
+    0% { transform: rotate(0deg);}
+    25% { transform: rotate(180deg);}
+    50% { transform: rotate(180deg);}
+    75% { transform: rotate(360deg);}
+    100% { transform: rotate(360deg);}
+  }
+  @keyframes loader-inner {
+    0% { height: 0%;}
+    25% { height: 0%;}
+    50% { height: 100%;}
+    75% { height: 100%;}
+    100% { height: 0%;}
+  }
