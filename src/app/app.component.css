@@ -82,17 +82,12 @@ html, body{
     align-items: center;
 }
 
-.btn:hover{
-    cursor: pointer;
-    box-shadow: 0 0.4rem 1.4rem rgba(86, 158, 235, 0.5);
-    transform: translateY(-0.1rem);
-    transition: 150ms;
-}
+
 
 .icon fa-icon{
     width: 5.6rem;
     height: 5.6rem;
-    color: #0bb5f4 ;
+    color: #f40b0b ;
     margin-right: 0.8rem;
     font-size: 2rem;
     position: relative;

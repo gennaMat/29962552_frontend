@@ -1,5 +1,5 @@
 import { Component, OnInit, Type } from '@angular/core';
-import { faSignInAlt, faThumbsDown } from '@fortawesome/free-solid-svg-icons';
+import { faUserAlt, faThumbsDown } from '@fortawesome/free-solid-svg-icons';
 import { FormControl, Validators } from '@angular/forms';
 import { HttpClient} from '@angular/common/http';
 import {MatSnackBar} from '@angular/material/snack-bar';
@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
   constructor(private http: HttpClient, private _snackBar: MatSnackBar, private router: Router) { }
 
   loginTitle = "Login";
-  loginIco = faSignInAlt;
+  loginIco = faUserAlt;
   btnLogin = "Login";
   btnSignUp = "Sign Up";
   routerLink = "/";
