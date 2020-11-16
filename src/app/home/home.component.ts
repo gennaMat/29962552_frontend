@@ -100,7 +100,7 @@ export class HomeComponent implements OnInit {
       let httpHeaders = new HttpHeaders()
       .set('Authorization', token);
 
-      this.http.post('https://gen-project2-api.herokuapp.com/userFile/upload/'+ userEmail, formData ,{headers: httpHeaders})
+      this.http.post('https://localhost:4200'+ userEmail, formData ,{headers: httpHeaders})
       .subscribe(Response => {
         console.log(Response);
 
@@ -179,7 +179,7 @@ export class HomeComponent implements OnInit {
                 {'propName' : 'national', 'value': this.fNationality.value}
               ]     
           
-              this.http.patch('https://gen-project2-api.herokuapp.com/user/'+ userEmail, data ,{headers: httpHeaders})
+              this.http.patch('https://localhost:4200'+ userEmail, data ,{headers: httpHeaders})
               .subscribe(Response => {
                 console.log(Response);
 

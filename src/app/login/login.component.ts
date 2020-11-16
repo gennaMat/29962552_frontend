@@ -52,7 +52,7 @@ export class LoginComponent implements OnInit {
     let userEmail =  this.fUsernameControl.value;
     let userPassword =  this.fPasswordControl.value;
 
-    this.http.post('https://gen-project2-api.herokuapp.com/user/login',{
+    this.http.post('https://localhost:4200/app/login',{
               email: userEmail,
               password: userPassword
             },)
